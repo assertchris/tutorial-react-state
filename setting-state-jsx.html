@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="react-0.8.0/build/react.js"></script>
+    <script type="text/javascript" src="react-0.8.0/build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <script type="text/jsx">
+
+      /**
+       * @jsx React.DOM
+       */
+        
+      var InterfaceComponent = React.createClass({
+        render : function() {
+          return <div>
+            hello { this.state ? this.state.name : "" }
+          </div>;
+        }
+      });
+
+      var interfaceComponent = InterfaceComponent({});
+
+      React.renderComponent(
+        interfaceComponent,
+        document.body
+      );
+
+      interfaceComponent.setState({
+        name : "chris"
+      });
+
+    </script>
+  </body>
+</html>
