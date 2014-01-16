@@ -12,23 +12,27 @@
        */
         
       var InterfaceComponent = React.createClass({
+        getInitialState : function() {
+          return {
+            name : "chris"
+          };
+        },
+        handleClick : function() {
+          this.setState({
+            name : "bob"
+          });
+        },
         render : function() {
-          return <div>
-            hello { this.state ? this.state.name : "" }
+          return <div onClick={this.handleClick}>
+            hello {this.state.name}
           </div>;
         }
       });
 
-      var interfaceComponent = InterfaceComponent({});
-
       React.renderComponent(
-        interfaceComponent,
+        <InterfaceComponent />,
         document.body
       );
-
-      interfaceComponent.setState({
-        name : "chris"
-      });
 
     </script>
   </body>
